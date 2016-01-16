@@ -2,50 +2,43 @@ var prompt = require('prompt');
 
 prompt.start();
 
-var userHP = 100;
+var userHP = 5;
 // var userFood = 50;
 // var userAxeDamage = 4;
 // var userFifthSense = 0;
 var day = 0;
 
-var zombieHP = 20;
+var zombieHP = 5;
 // var zombieDamage = 5;
 
 var input;
 
-prompt.get(["RestOrScavange"], function(err, result) {
-  if(err) {
-    throw err;
-  }
+// while (userHP > 0) {
+  prompt.get(["guessNumber"], function(err, result) {
+    if(err) {
+      throw err;
+    }
 
-  input = result.RestOrScavange;
-  switch (input) {
-    case "rest":
-      day +=1;
-      console.log(day);
-      break;
+    var userNumber = result.guessNumber;
 
-    default:
-      console.log("error");
-  }
-});
+    var randNum = Math.floor(Math.random() * 10) + 1;
+    console.log(randNum);
 
+    if (userNumber === randNum) {
+      //user attacks zombie
+      zombieHP = zombieHP - (Math.floor(Math.random() * (5-3)) + 2);
+      console.log(zombieHP);
+      console.log("zombie");
+    } else {
+      //zombie attacks user
+      userHP = userHP - (Math.floor(Math.random() * (5-3)) + 2);
+      console.log(userHP);
+      console.log("user");
+    }
 
+    day++;
+  });
+// }
 
-
-if (userFifthSense < 5) {
-  //1% chance to find food
-  //1% chance to find gun
-} 
-  else if (userFifthSense >= 5 && userFifthSense <= 7) {
-    //5% chance to find food
-    //5% chance to find gun
-  } else if (userFifthSense >= 7 && userFifthSense < 10) {
-      //7% chance to find food
-      //7% chance to find gun
-    } else if (userFifthSense === 10) {
-        //10% chance to find food
-        //10% chance to find gun
-      }
 
 
