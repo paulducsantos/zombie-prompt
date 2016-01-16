@@ -1,0 +1,23 @@
+{
+  "name": "zombie-prompt",
+  "version": "1.0.0",
+  "description": "zombie game",
+  "main": "zombie.js",
+  "dependencies": {
+    "prompt": "^0.2.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulducsantos/zombie-prompt.git"
+  },
+  "author": "Paul Santos & Chinmay Das",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulducsantos/zombie-prompt/issues"
+  },
+  "homepage": "https://github.com/paulducsantos/zombie-prompt#readme"
+}
